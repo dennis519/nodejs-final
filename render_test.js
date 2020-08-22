@@ -1,5 +1,6 @@
 let express = require('express')
 let app = express();
+let firebase = require('firebase')
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
     res.render("default", {

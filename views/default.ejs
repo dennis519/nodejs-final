@@ -2,13 +2,14 @@
 <html>  
     <head>  
         <meta charset="utf-8">  
-        <title>實作EJS</title>  
+        <title>nodejs final</title>  
     </head>  
     <body>  
-        <h1><%= title %></h1>    
+        <h1><%= title %></h1>
+        <h1><%= header %></h1>    
         <ul>  
-            <% for(var i=0; i<users.length; i++) {%>  
-                <li><%= users[i] %></li>  
+            <% for(let i=0; i<routes.length; i++) {%>  
+                <li><%= routes[i] %></li>  
             <% } %>  
         </ul>  
     </body>  

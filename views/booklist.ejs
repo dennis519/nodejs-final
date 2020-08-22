@@ -3,27 +3,27 @@
     <head>
         <link rel="stylesheet" href="styles.css">
     </head>
-    <h1>ClassA</h1>
+    <h1>Booklist</h1>
     <body>
         <div class="content">
-            <form id="add-students-form">
-                <input type="text" name="name" placeholder="輸入 Student's name">
-                <input type="text" name="gender" placeholder="輸入 Student's gender">
-                <input type="text" name="age" placeholder="輸入 Student's age">
-                <button> Add a student </button> 
+            <form id="add-books-form">
+                <input type="text" name="name" placeholder="輸入 Book's name">
+                <input type="text" name="gender" placeholder="輸入 Book's author">
+                <input type="text" name="age" placeholder="輸入 Book's ISBN">
+                <button> Add a Book </button> 
             </form>
             <table id="stu-table" cellpadding="10" border="1" width="100%">
                 　<tr>
-                　  <td>姓名</td>
-                　  <td>年齡</td>
-                    <td>性別</td>
+                　  <td>書名</td>
+                　  <td>作者</td>
+                    <td>ISBN</td>
                     <td>刪除</td>
                 　</tr>
                 <% for(let i = 0 ; i < users.length; i++) {%>
                     <tr data-id="<%= users[i].id %>">
                         <td><%= users[i].name %></td>
-                        <td><%= users[i].age %></td>
-                        <td><%= users[i].gender %></td>
+                        <td><%= users[i].author %></td>
+                        <td><%= users[i].ISBN %></td>
                         <td><div id="cross-family" cross-id="<%= users[i].id %>">x</div></td>
                     </tr>
                 <% } %>
@@ -31,4 +31,5 @@
         </div>
     </body>
     <script src="backend_setEvent.js"></script>
+    
 </html>

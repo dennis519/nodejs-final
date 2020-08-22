@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <h1>Booklist</h1>
+    <body>
+        <div class="content">
+            <form id="add-books-form">
+                <input type="text" name="name" placeholder="輸入 name">
+                <input type="text" name="author" placeholder="輸入 author">
+                <input type="text" name="ISBN" placeholder="輸入 ISBN">
+                <button> Add a book </button> 
+            </form>
+            <table id="stu-table" cellpadding="10" border="1" width="100%">
+                　<tr>
+                　  <td>書名</td>
+                　  <td>作者</td>
+                    <td>ISBN</td>
+                　</tr>
+            </table>
+        </div>
+    </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyCEGlSi8dAotUj58lI4iV5DNX6J0HqDBtc",
+    authDomain: "test-2d036.firebaseapp.com",
+    databaseURL: "https://test-2d036.firebaseio.com",
+    projectId: "test-2d036",
+    storageBucket: "test-2d036.appspot.com",
+    messagingSenderId: "1088875786883",
+    appId: "1:1088875786883:web:672c2d2ea208b0696361b6",
+    measurementId: "G-F9XNL03T1L"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+    const db = firebase.firestore();
+    </script>
+    <script src="frontend_setEvent.js"></script>
+</html>

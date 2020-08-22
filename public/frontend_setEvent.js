@@ -1,5 +1,5 @@
-const studentsTable = document.querySelector('#stu-table');
-const form = document.querySelector("#add-students-form");
+const studentsTable = document.querySelector('#book-table');
+const form = document.querySelector("#add-books-form");
 // create element & render 
 function renderStudents(doc){
     let td1 = document.createElement("td");
@@ -8,21 +8,22 @@ function renderStudents(doc){
     let tr = document.createElement("tr");
     tr.setAttribute('data-id', doc.id);
     td1.textContent = doc.data().name;
-    td2.textContent = doc.data().age;
-    td3.textContent = doc.data().gender;
+    td2.textContent = doc.data().author;
+    td3.textContent = doc.data().ISBN;
     tr.appendChild(td1);
     tr.appendChild(td2);
     tr.appendChild(td3);
     
     // delete 
-    let cross = document.createElement('div');
+    let cross = document.createElement('td');
+    cross.id = "cross-family";
     cross.textContent = 'x';
     tr.appendChild(cross);
     cross.addEventListener('click', (test) => {
         test.stopPropagation();
         let id = test.target.parentElement.getAttribute('data-id');
         console.log(id);
-        db.collection('classA').doc(id).delete();
+        db.collection('booklist').doc(id).delete();
     });
     //
 
@@ -30,7 +31,7 @@ function renderStudents(doc){
 }
 
 // getting data 
-db.collection('classA').get().then(data => {
+db.collection('booklist').get().then(data => {
     data.docs.forEach(doc => {
         renderStudents(doc);
     });
@@ -40,12 +41,13 @@ db.collection('classA').get().then(data => {
 // add data
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    db.collection('classA').add({
+    db.collection('booklist').add({
         name: form.name.value,
-        gender: form.gender.value,
-        age: form.age.value
+        author: form.author.value,
+        ISBN: form.ISBN.value
     });
-    form.name.value = '';
-    form.gender.value = '';
-    form.age.value = '';
+    location.reload();
+    //form.name.value = '';
+    //form.author.value = '';
+    //form.ISBN.value = '';
 });
