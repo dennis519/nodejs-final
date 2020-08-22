@@ -79,13 +79,13 @@ app.get("/frontend", (req, res) => {
 })
 
 
-app.get('/backend/API/deleteBook', (req, res) => {
+app.get('/API/deleteBook', (req, res) => {
     db.collection('booklist').doc(req.query.id).delete();
     console.log(req.query.id);
     res.send(`delete Book id = ${req.query.id}!`)
 })
 
-app.get('/backend/API/addBook', (req, res) => {
+app.get('/API/addBook', (req, res) => {
     db.collection('booklist').add({
         name: req.query.name,
         author: req.query.author,
